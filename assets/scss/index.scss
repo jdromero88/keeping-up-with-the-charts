@@ -1,0 +1,135 @@
+// variables
+$color-blanco-100: rgba(255, 255, 255, 1);
+$color-blanco-200: rgba(255, 255, 255, .2);
+
+$color-negro-100: rgba(0, 0, 0, 1);
+$color-negro-200: rgba(0, 0, 0, .2);
+
+$color-rojo-100: rgba(255, 0, 0, 1);
+$color-rojo-800: rgba(255, 0, 0, .8);
+
+$color-verde-100: rgba(43, 98, 18, 1);
+$color-verde-800: rgba(43, 98, 18, 0.8);
+
+/*
+** Reseting
+*/
+a {
+  text-decoration: none;
+  outline: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+* {
+  margin: 0;
+}
+
+/*
+** Styles
+*/
+html {
+  font-size: 16px;
+  font-family: system-ui;
+}
+
+
+header {
+  height: 15rem;
+}
+
+.navbar {
+  height: 10rem;
+  background-color: $color-verde-800;
+  position: sticky;
+  top:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    display: inline-flex;
+  }
+
+  a {
+    color: $color-blanco-200;
+    padding: 1.2rem;
+    width: 100%;
+    transition: .3s ease-out all;
+
+    &:hover {
+      text-decoration: underline;
+      outline: none;
+    }
+  }
+
+}
+
+.footer {
+  background-color: $color-verde-800;
+  color: $color-blanco-200;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+.index {
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__h1 {
+    color: $color-verde-800;
+    font-size: 2rem;
+  }
+
+  &__li {
+    margin-top: 1rem;
+    font-size: 1.7rem;
+  }
+
+  &__button {
+    font-size: 1.3rem;
+    line-height: 1.1;
+    margin: .5rem .5rem;
+    padding: .5rem 1rem;
+    border: 1px solid $color-verde-100;
+    background: linear-gradient($color-verde-100, $color-verde-800);
+    color: $color-blanco-100;
+    font-weight: bolder;
+
+    &__icon {
+      padding: 0;
+      width: 2.3rem;
+      height: 2.3rem;
+    }
+
+    @media screen and (min-width: 640px) {
+      margin: 1rem auto;
+      font-size: 1.5rem;
+      line-height: .9;
+    }
+  }
+
+  &__input {
+    // overflow-x: hidden;
+    font-size: 1.2rem;
+    line-height: .8;
+    margin: .5rem .5rem;
+    border: 1px solid $color-verde-100;
+    @media screen and (min-width: 640px) {
+      margin: 1rem auto;
+      font-size: 1.5rem;
+      line-height: .9;
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    width: 50vw;
+    margin: 0 auto;
+  }
+}

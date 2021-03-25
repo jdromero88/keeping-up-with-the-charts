@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta name="keywords" content="charts, highcharts, track"/>
+		<meta name="description" content="App that keep track of the charts that we create"/>
+		<meta name="subject" content="App that keep track of the charts that we create">
+		<meta name="copyright"content="Jose Romero">
+		<meta name="robots" content="index,follow" />
+		<meta name="topic" content="charts">
+		<meta name="summary" content="App that keep track of the charts that we create">
+		<meta name="author" content="Jose Romero, hola@josedromero.com">
+		<meta name="designer" content="Jose Romero">
+		<meta name="copyright" content="">
+		<meta name="reply-to" content="hola@josedromero.com">
+		<meta name="owner" content="Jose Romero">
+		<meta name="url" content="https://www.lista.josedromero.com">
+		<meta name="identifier-URL" content="https://www.lista.josedromero.com">
+
+
+		<title>Our Charts</title>
+		<link rel="stylesheet" href="./assets/css/normalize.css">
+		<link rel="stylesheet" href="./assets/css/index.css">
+	</head>
+
+	<body>
+		<header>
+			<nav class="navbar">
+				<ul role="list">
+					<li><a href="#">Inicio</a></li>
+					<li><a href="#">Acerca</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="index">
+			<h1 class="index__h1">Charts List!</h1>
+			<form>
+				<input id="chartName"
+					type="text"
+					name="name"
+					value=""
+					placeholder="Chart name">
+				<input id="chartLink"
+					type="text"
+					name="link"
+					value=""
+					placeholder="Chart link">
+				<input id="chartDate"
+					type="date"
+					name="creation-date"
+					value="" >
+				<input id="addChart"
+					type="submit"
+					name="submit"
+					value="Add Chart">
+			</form>
+
+			<button id="createChart" type="button" name="showChart">Create chart</button>
+			<button id="showChart" type="button" name="showChart">show chart</button>
+			<button id="showChartById" type="button" name="showChart">show chart by id</button>
+			<button id="showAuthor" type="button" name="showAuthor">show author</button>
+			<button id="showProgram" type="button" name="showProgram">show program</button>
+		</main>
+		<!-- TODO: make footer sticky to the bottom. -->
+		<footer id="footer" class="footer"></footer>
+		<script src="./assets/js/index.js"></script>
+		<script src="./assets/js/chart.js"></script>
+		<script src="./assets/js/author.js"></script>
+		<script src="./assets/js/program.js"></script>
+	</body>
+
+</html>
