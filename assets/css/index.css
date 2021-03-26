@@ -21,6 +21,29 @@ html {
   font-family: system-ui;
 }
 
+.sr-only:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+.visually-hidden {
+  position: absolute;
+  top: auto;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.clear {
+  clear: both;
+}
+
 header {
   height: 15rem;
 }
@@ -38,7 +61,7 @@ header {
   display: inline-flex;
 }
 .navbar a {
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
   padding: 1.2rem;
   width: 100%;
   transition: 0.3s ease-out all;
@@ -46,16 +69,6 @@ header {
 .navbar a:hover {
   text-decoration: underline;
   outline: none;
-}
-
-.footer {
-  background-color: rgba(43, 98, 18, 0.8);
-  color: rgba(255, 255, 255, 0.2);
-  height: 10rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: auto;
 }
 
 .index {
@@ -93,14 +106,14 @@ header {
     line-height: 0.9;
   }
 }
-.index__input {
+.index input {
   font-size: 1.2rem;
   line-height: 0.8;
   margin: 0.5rem 0.5rem;
   border: 1px solid #2b6212;
 }
 @media screen and (min-width: 640px) {
-  .index__input {
+  .index input {
     margin: 1rem auto;
     font-size: 1.5rem;
     line-height: 0.9;
@@ -111,6 +124,16 @@ header {
     width: 50vw;
     margin: 0 auto;
   }
+}
+
+.footer {
+  background-color: rgba(43, 98, 18, 0.8);
+  color: rgba(255, 255, 255, 0.2);
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
 }
 
 /*# sourceMappingURL=index.css.map */

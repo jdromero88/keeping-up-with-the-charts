@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+// @use 'sass:map';
+/*
+** Reseting
+*/
+a {
+  text-decoration: none;
+  outline: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+* {
+  margin: 0;
+}
+
+/*
+** Styles
+*/
+html {
+  font-size: 16px;
+  font-family: system-ui;
+}
