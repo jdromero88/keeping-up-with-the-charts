@@ -36,14 +36,18 @@ class Chart {
 
   showChart(filter, filterBy) {
     return this.charts.filter( chart => chart[filterBy] === filter )[0]
-
   }
 
 
+  // Map through charts & replace info with new info
+  editChart(name, info) {
+    this.charts = this.charts.map( chart =>
+      chart.name === name ? {name: info.name, link: info.link, dob: info.dob} : chart
+    )
+  }
 
-  editChart(name, link) {
-    this.name = name
-    this.link = link
+  deleteChart(name) {
+    this.charts = this.charts.filter( chart => chart.name !== name)
   }
 
   listCharts() {
