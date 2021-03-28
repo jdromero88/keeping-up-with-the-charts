@@ -21,6 +21,16 @@ function init() {
   app.model.deleteChart("china lifestyle")
   console.log(app.model.listCharts())
 
+  function addCharte(e) {
+    e.preventDefault()
+    let name = document.querySelector("#chartName").value
+    let link = document.querySelector("#chartLink").value
+    let dob = document.querySelector("#chartDOB").value
+
+    console.log(name, " ", link, " ", dob);
+    app.model.addChart(name, link, dob)
+    console.log(app.model.listCharts())
+  }
 
 
   // Listeners
@@ -28,7 +38,7 @@ function init() {
   document.querySelector('#showChartById').addEventListener('click', () => findChart("nuevo"))
   document.querySelector('#showAuthor').addEventListener('click', showAuthor)
   document.querySelector('#showProgram').addEventListener('click', showProgram)
-  document.querySelector('#addChart').addEventListener('click', (e) => addChart(e))
+  document.querySelector('#createChart').addEventListener('click', (e) => addCharte(e))
 }
 
 

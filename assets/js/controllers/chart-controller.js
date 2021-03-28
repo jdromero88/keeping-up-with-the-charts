@@ -3,4 +3,6 @@ class ChartController {
     this.model = model
     this.view = view
   }
+
+
 }
