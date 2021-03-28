@@ -1,9 +1,19 @@
-let charts = null
+let charts = []
 
 async function getCharts(){
 	await fetch( './assets/data/charts.json' )
 	.then( response => response.json() )
-	.then( data => charts = data.charts)
+	.then( data => rowToObject(data.charts) )
+}
+
+function rowToObject(data){
+	console.log(data)
+	data.forEach( (item, i) => {
+		let chart = new Chart(item.name, item.link, item.dob)
+		console.log(chart);
+		charts.push(chart)
+	})
+	console.log(charts)
 }
 
 let year = new Date()
@@ -24,17 +34,7 @@ function formatFooter() {
 	pEl.innerHTML = year.getFullYear() + `&copy; List of Charts`
   footerEl.appendChild(pEl)
 }
-function createChart(name, link, date) {
 
-	for (let i = 0; i < 100; i++) {
-		// eval("chart_" + i + " = " + new Chart(name, link, date))
-		eval("uno"+ i + "=" + "new Chart(name, link, date)")
-		charts.push(eval("uno"+ i))
-	}
-	charts.forEach((chart, i) => chart.name = chart.name + i);
-
-	// let p = new Producto(productoParaAgregar.value, cantidad.value)
-}
 
 let showChart = () => {
 	console.log('I need to show the charts')
@@ -42,8 +42,9 @@ let showChart = () => {
 }
 
 function findChart(name) {
-		let found = charts.filter( chart => chart.name == name)[0].name
+		let found = charts.filter( chart => chart.name == name)
 		console.log(found)
+		console.log(found[0].name)
 }
 
 let showAuthor = () => {
@@ -59,19 +60,14 @@ function addChart(e) {
 	let name = document.querySelector("#chartName").value
 	let link = document.querySelector("#chartLink").value
 	let dob = document.querySelector("#chartDate").value
+	let chart = new Chart(name, link, dob);
+	charts.push(chart)
 	console.log(name, " ", link, " ", dob);
-	test.charts.push({
-		name: name,
-		link: link,
-		dob: dob
-	})
-	test
 }
 
 // Listeners
-document.querySelector('#createChart').addEventListener('click', () => createChart('test', 'https://test.com', new Date))
 document.querySelector('#showChart').addEventListener('click', showChart)
-document.querySelector('#showChartById').addEventListener('click', () => findChart("china lifestyle"))
+document.querySelector('#showChartById').addEventListener('click', () => findChart("nuevo"))
 document.querySelector('#showAuthor').addEventListener('click', showAuthor)
 document.querySelector('#showProgram').addEventListener('click', showProgram)
 document.querySelector('#addChart').addEventListener('click', (e) => addChart(e))
