@@ -2,9 +2,9 @@ class Chart {
   constructor() {
     this.charts = [
       {
-        "name":"test",
-        "link":"http://someURl.com",
-        "dob":"2020/03/20"
+        name: "test",
+        link: "http://someURl.com",
+        dob: "2020/03/20"
       },
       {
         "name":"china lifestyle",
@@ -24,20 +24,20 @@ class Chart {
     ]
   }
 
-  addChart(name, link, dob) {
+  addChart(name, link, dob, programId, authorId) {
     const chart = {
       name: name,
       link: link,
-      dob: dob
+      dob: dob,
+      programId: programId,
+      authorId: authorId
     }
     this.charts.push(chart)
   }
 
-
   showChart(filter, filterBy) {
     return this.charts.filter( chart => chart[filterBy] === filter )[0]
   }
-
 
   // Map through charts & replace info with new info
   editChart(name, info) {

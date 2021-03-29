@@ -12,14 +12,14 @@ function init() {
   const app = new ChartController(new Chart(), new ChartView())
   console.log(app)
   // app.model
-  app.view.logConnected()
-  console.log(app.model.listCharts())
-  console.log(app.model.showChart("test", "name"))
-  app.model.editChart("test", {name: "test1", link: "link-test", dob: "2021/04/28"})
-  console.log(app.model.listCharts())
-  console.log(app.model.showChart("test1", "name"))
-  app.model.deleteChart("china lifestyle")
-  console.log(app.model.listCharts())
+  // app.view.logConnected()
+  // console.log(app.model.listCharts())
+  // console.log(app.model.showChart("test", "name"))
+  // app.model.editChart("test", {name: "test1", link: "link-test", dob: "2021/04/28"})
+  // console.log(app.model.listCharts())
+  // console.log(app.model.showChart("test1", "name"))
+  // app.model.deleteChart("china lifestyle")
+  // console.log(app.model.listCharts())
 
   function addCharte(e) {
     e.preventDefault()
@@ -27,14 +27,16 @@ function init() {
     let link = document.querySelector("#chartLink").value
     let dob = document.querySelector("#chartDOB").value
 
-    console.log(name, " ", link, " ", dob);
+    console.log(name, " ", link, " ", dob)
     app.model.addChart(name, link, dob)
-    console.log(app.model.listCharts())
   }
 
+	function showCharts() {
+		console.log(app.model.listCharts())
+	}
 
   // Listeners
-  document.querySelector('#showChart').addEventListener('click', showChart)
+  document.querySelector('#showCharts').addEventListener('click', showCharts)
   document.querySelector('#showChartById').addEventListener('click', () => findChart("nuevo"))
   document.querySelector('#showAuthor').addEventListener('click', showAuthor)
   document.querySelector('#showProgram').addEventListener('click', showProgram)

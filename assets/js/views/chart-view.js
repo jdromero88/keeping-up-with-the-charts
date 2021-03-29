@@ -34,6 +34,10 @@ class ChartView {
     this.chartSubmitInput.name = 'submit'
     this.chartSubmitInput.value = 'Create Chart'
 
+    // ul tag to add the new charts
+    this.chartList = this.createElement('ul')
+    this.chartList.id = 'listCharts'
+
 
     // append inputs to the form
     this.form.append(this.chartNameInput, this.chartLinkInput, this.chartDOBInput, this.chartSubmitInput)
@@ -43,6 +47,14 @@ class ChartView {
 
   logConnected() {
     console.log("connected")
+  }
+
+  get _chartText() {
+    return this.chartNameInput.value
+  }
+
+  _resetChartInputName() {
+    this.chartNameInput.value = ''
   }
 
   // Create element with class
@@ -56,5 +68,34 @@ class ChartView {
   getElement(selector) {
     const element = document.querySelector(selector)
     return element
+  }
+
+  renderCharts(charts) {
+    debugger
+    // First remove all the nodes
+    while (this.chartList.firstChild) {
+      this.chartList.removeChild(this.chartList.firstChild)
+    }
+
+    // show somthing on the lista
+    if (charts.length === 0 ) {
+      const p = this.createElement('p')
+      p.innerText = 'List is empty.'
+      this.chartList.append(p)
+    } else {
+      charts.forEach( chart => {
+        const li = this.createElement('li', 'main__li')
+        li.id = chart.name
+
+        const p = this.createElement('p')
+
+        const deleteButton = this.createElement('button', 'main__delete')
+        deleteButton.innerText = 'Delete'
+
+        li.append(p, deleteButton)
+        this.chartList.append(li)
+      })
+
+    }
   }
 }
