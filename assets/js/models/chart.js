@@ -2,9 +2,9 @@ class Chart {
   constructor() {
     this.charts = [
       {
-        name: "test",
-        link: "http://someURl.com",
-        dob: "2020/03/20"
+        "name": "test",
+        "link": "http://someURl.com",
+        "dob": "2020/03/20"
       },
       {
         "name":"china lifestyle",
@@ -33,6 +33,7 @@ class Chart {
       authorId: authorId
     }
     this.charts.push(chart)
+    this.onChartListChanged(this.charts)
   }
 
   showChart(filter, filterBy) {
@@ -52,5 +53,9 @@ class Chart {
 
   listCharts() {
     return this.charts
+  }
+
+  bindChartListChanged(callback) {
+    this.onChartListChanged = callback
   }
 }

@@ -23,12 +23,17 @@ function init() {
 
   function addCharte(e) {
     e.preventDefault()
-    let name = document.querySelector("#chartName").value
-    let link = document.querySelector("#chartLink").value
-    let dob = document.querySelector("#chartDOB").value
+		const chart = {
+			name: document.querySelector("#chartName").value,
+			link: document.querySelector("#chartLink").value,
+			dob: document.querySelector("#chartDOB").value
+		}
 
-    console.log(name, " ", link, " ", dob)
-    app.model.addChart(name, link, dob)
+		// console.log(app)
+    // console.log(name, " ", link, " ", dob)
+		app.handleAddChart(chart)
+    // app.model.addChart(name, link, dob)
+		// app.model
   }
 
 	function showCharts() {
@@ -40,7 +45,7 @@ function init() {
   document.querySelector('#showChartById').addEventListener('click', () => findChart("nuevo"))
   document.querySelector('#showAuthor').addEventListener('click', showAuthor)
   document.querySelector('#showProgram').addEventListener('click', showProgram)
-  document.querySelector('#createChart').addEventListener('click', (e) => addCharte(e))
+  // document.querySelector('#createChart').addEventListener('click', (e) => addCharte(e))
 }
 
 

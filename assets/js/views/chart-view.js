@@ -3,6 +3,9 @@ class ChartView {
     // Root element
     this.app = this.getElement('#root')
 
+    // get section so we can append the ul
+    this.sectionCharts = this.getElement('#listingCharts')
+
     // title of the app
     this.title = this.createElement('h1', 'main__h1')
     this.title.innerText = 'Keeping up with the Charts!'
@@ -49,13 +52,30 @@ class ChartView {
     console.log("connected")
   }
 
-  get _chartText() {
+  get _chartName() {
     return this.chartNameInput.value
   }
 
   _resetChartInputName() {
     this.chartNameInput.value = ''
   }
+
+  get _chartLink(){
+    return this.chartLinkInput.value
+  }
+
+  _resetChartInputLink() {
+    this.chartLinkInput.value = ''
+  }
+
+  get _chartDOB(){
+    return this.chartDOBInput.value
+  }
+
+  _resetChartInputDOB() {
+    this.chartDOBInput.value = ''
+  }
+
 
   // Create element with class
   createElement(tag, className) {
@@ -66,12 +86,14 @@ class ChartView {
   }
 
   getElement(selector) {
-    const element = document.querySelector(selector)
-    return element
+    // const element = document.querySelector(selector)
+    // return element
+    return document.querySelector(selector)
   }
 
   renderCharts(charts) {
-    debugger
+    // debugger
+
     // First remove all the nodes
     while (this.chartList.firstChild) {
       this.chartList.removeChild(this.chartList.firstChild)
@@ -83,19 +105,46 @@ class ChartView {
       p.innerText = 'List is empty.'
       this.chartList.append(p)
     } else {
-      charts.forEach( chart => {
-        const li = this.createElement('li', 'main__li')
-        li.id = chart.name
-
-        const p = this.createElement('p')
-
-        const deleteButton = this.createElement('button', 'main__delete')
-        deleteButton.innerText = 'Delete'
-
-        li.append(p, deleteButton)
-        this.chartList.append(li)
-      })
+      charts.forEach( chart => this.renderSingleChart( chart ))
 
     }
+  }
+
+  renderSingleChart(chart) {
+    const li = this.createElement('li', 'main__li')
+    li.id = chart.name
+
+    const p = this.createElement('p')
+    p.innerText = chart.name
+
+    const deleteButton = this.createElement('button', 'main__delete')
+    deleteButton.innerText = 'Delete'
+
+    li.append(p, deleteButton)
+    this.chartList.append(li)
+
+    this.sectionCharts.append(this.chartList)
+  }
+
+  bindAddChart( handler ) {
+    // debugger
+    this.chartSubmitInput.addEventListener( 'click', e => {
+      e.preventDefault()
+
+
+      const chart = {
+  			name: this._chartName,
+  			link: this._chartLink,
+  			dob: this._chartDOB
+  		}
+
+      console.log(chart)
+      if (true) {
+        handler( chart )
+        this._resetChartInputName()
+        this._resetChartInputLink()
+        this._resetChartInputDOB()
+      }
+    })
   }
 }
