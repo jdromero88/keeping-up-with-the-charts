@@ -1,0 +1,30 @@
+@use '../abstracts' as *;
+header {
+  height: 15rem;
+}
+
+.navbar {
+  height: 10rem;
+  background-color: $color-verde-800;
+  position: sticky;
+  top:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    display: inline-flex;
+  }
+
+  a {
+    color: $color-blanco-500;
+    padding: 1.2rem;
+    width: 100%;
+    transition: .3s ease-out all;
+
+    &:hover {
+      text-decoration: underline;
+      outline: none;
+    }
+  }
+}

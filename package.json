@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jdromero88/namegoeshere.git"
+    "url": "git+https://github.com/jdromero88/keeping-up-with-the-charts.git"
   },
   "keywords": [
     "charts",
@@ -20,7 +20,7 @@
   "author": "Jose Romero",
   "license": "SEE LICENSE IN license.md",
   "bugs": {
-    "url": "https://github.com/jdromero88/namegoeshere/issues"
+    "url": "https://github.com/jdromero88/keeping-up-with-the-charts/issues"
   },
-  "homepage": "https://github.com/jdromero88/namegoeshere#readme"
+  "homepage": "https://github.com/jdromero88/keeping-up-with-the-charts#readme"
 }

@@ -4,6 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
 		<meta name="keywords" content="charts, highcharts, track"/>
 		<meta name="description" content="App that keep track of the charts that we create"/>
@@ -20,7 +21,6 @@
 		<meta name="url" content="https://www.lista.josedromero.com">
 		<meta name="identifier-URL" content="https://www.lista.josedromero.com">
 
-
 		<title>Our Charts</title>
 		<link rel="stylesheet" href="./assets/css/normalize.css">
 		<link rel="stylesheet" href="./assets/css/index.css">
@@ -35,41 +35,28 @@
 				</ul>
 			</nav>
 		</header>
-		<main class="index">
-			<h1 class="index__h1">Charts List!</h1>
-			<form>
-				<input id="chartName"
-					type="text"
-					name="name"
-					value=""
-					placeholder="Chart name">
-				<input id="chartLink"
-					type="text"
-					name="link"
-					value=""
-					placeholder="Chart link">
-				<input id="chartDate"
-					type="date"
-					name="creation-date"
-					value="" >
-				<input id="addChart"
-					type="submit"
-					name="submit"
-					value="Add Chart">
-			</form>
+		<main id="root" class="main">
+			<h1 class="main__h1">Charts List!</h1>
 
-			<button id="createChart" type="button" name="showChart">Create chart</button>
-			<button id="showChart" type="button" name="showChart">show chart</button>
-			<button id="showChartById" type="button" name="showChart">show chart by id</button>
+			<button id="showCharts" type="button" name="showChart">show chart</button>
+			<button id="showChartById" type="button" name="showChart">Find Chart by Name</button>
 			<button id="showAuthor" type="button" name="showAuthor">show author</button>
 			<button id="showProgram" type="button" name="showProgram">show program</button>
+
+			<section id="listingCharts" class="">
+
+			</section>
 		</main>
 		<!-- TODO: make footer sticky to the bottom. -->
 		<footer id="footer" class="footer"></footer>
-		<script src="./assets/js/index.js"></script>
-		<script src="./assets/js/chart.js"></script>
+		<!-- <script src="./assets/js/index.js"></script> -->
+		<script src="./assets/js/controllers/chart-controller.js"></script>
+		<script src="./assets/js/models/chart.js"></script>
+		<script src="./assets/js/views/chart-view.js"></script>
+		<script src="./assets/js/indexMVC.js"></script>
+		<!-- <script src="./assets/js/chart.js"></script>
 		<script src="./assets/js/author.js"></script>
-		<script src="./assets/js/program.js"></script>
+		<script src="./assets/js/program.js"></script> -->
 	</body>
 
 </html>

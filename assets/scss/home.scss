@@ -1,0 +1,60 @@
+@use './abstracts' as *;
+
+.main {
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__h1 {
+    color: $color-verde-800;
+    font-size: 2rem;
+  }
+
+  &__li {
+    margin-top: 1rem;
+    font-size: 1.7rem;
+  }
+
+  &__button {
+    font-size: 1.3rem;
+    line-height: 1.1;
+    margin: .5rem .5rem;
+    padding: .5rem 1rem;
+    border: 1px solid $color-verde-100;
+    background: linear-gradient($color-verde-100, $color-verde-800);
+    color: $color-blanco-100;
+    font-weight: bolder;
+
+    &__icon {
+      padding: 0;
+      width: 2.3rem;
+      height: 2.3rem;
+    }
+
+    @media screen and (min-width: 640px) {
+      margin: 1rem auto;
+      font-size: 1.5rem;
+      line-height: .9;
+    }
+  }
+
+  // TODO: move this to Typography
+  input {
+    // overflow-x: hidden;
+    display: block;
+    font-size: 1.2rem;
+    line-height: .8;
+    margin: .5rem .5rem;
+    border: 1px solid $color-verde-100;
+    @media screen and (min-width: 640px) {
+      margin: 1rem auto;
+      font-size: 1.5rem;
+      line-height: .9;
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    width: 50vw;
+    margin: 0 auto;
+  }
+}
