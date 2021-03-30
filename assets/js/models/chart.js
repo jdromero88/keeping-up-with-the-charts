@@ -24,7 +24,7 @@ class Chart {
     ]
   }
 
-  addChart(name, link, dob, programId, authorId) {
+  addChart( name, link, dob, programId, authorId ) {
     const chart = {
       name: name,
       link: link,
@@ -33,29 +33,31 @@ class Chart {
       authorId: authorId
     }
     this.charts.push(chart)
-    this.onChartListChanged(this.charts)
+    this.onChartListChanged( this.charts )
   }
 
-  showChart(filter, filterBy) {
+  showChart( filter, filterBy ) {
     return this.charts.filter( chart => chart[filterBy] === filter )[0]
   }
 
   // Map through charts & replace info with new info
-  editChart(name, info) {
+  editChart( name, info ) {
     this.charts = this.charts.map( chart =>
       chart.name === name ? {name: info.name, link: info.link, dob: info.dob} : chart
     )
   }
 
-  deleteChart(name) {
-    this.charts = this.charts.filter( chart => chart.name !== name)
+  deleteChart( name ) {
+    this.charts = this.charts.filter( chart => chart.name !== name )
+    this.onChartListChanged( this.charts )
   }
 
   listCharts() {
     return this.charts
   }
 
-  bindChartListChanged(callback) {
+  bindChartListChanged( callback ) {
     this.onChartListChanged = callback
   }
+
 }
